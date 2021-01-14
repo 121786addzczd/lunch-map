@@ -11,6 +11,11 @@
       <div class="table-body">
         <div class="item-data">
           <span class="id-column"><%= @user.id %></span>
+          <% unless @user.image.attached? %>
+            <div class="profile-default-img"></div>
+          <% else %>
+            <%= image_tag @user.image, class: "profile-img" %>
+          <% end %>
           <span class="name-column"><%= link_to @user.name, user_path(@user.id) %></span>
         </div>
         <div class="item-menu">
