@@ -13,6 +13,11 @@
         <div class="item-data">
           <span class="id-column"><%= user.id %></span>
           <span class="name-column"><%= link_to user.name, user_path(user.id) %></span>
+          <% unless user.image.attached? %>
+            <%= image_tag "/images/profile_default_img_128.png", class: "profile-img"%>
+          <% else %>
+            <%= image_tag user.image, class: "profile-img" %>
+          <% end %>
         </div>
         <div class="item-menu">
           <%= link_to "削除", "#", id:"delete-event" %>
