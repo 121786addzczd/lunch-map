@@ -10,6 +10,11 @@
   </head>
 
   <body>
+    <% if flash[:notice] %>
+      <div class="flash">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
     <p><%= link_to "トップページへ", root_path %></p>
 
 
