@@ -1,6 +1,14 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Shops</h1>
+<%= form_tag('/shops', method: 'get') do %>
+<%= label_tag(:name_key, 'Search name:') %>
+<%= text_field_tag(:name_key) %>
+<%= submit_tag('Search') %> <%= link_to 'Clear', shops_path %>
+<% end %>
+
+
+<br>
 
 <table>
   <thead>
