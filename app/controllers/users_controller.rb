@@ -1,5 +1,10 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update]
+  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user, only: [:index, :show, :edit, :update]
+  # ログインユーザーは以下のアクションを禁止
+  before_action :forbid_login_user, only: [:new, :create, :login_form, :login]
+  # ログイン中のユーザーのidと編集したいユーザーのidが等しいか判定
+  before_action :ensure_correct_user, only: [:edit, :update]
 
   def index
     @users = User.all
@@ -12,6 +17,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     @user.save
+    session[:user_id] = @user.id
     redirect_to user_path(@user)
   end
 
@@ -29,13 +35,56 @@ class UsersController < ApplicationController
     end
   end
 
+  def destroy
+    @user.destroy
+    redirect_to root_path
+  end
+
+
+  def login_form
+  end
+
+  def login
+    # 入力内容と一致するユーザーを取得し、変数@userに代入
+    @user = User.find_by(email: params[:email], password: params[:password])
+    # @userが存在するかどうかを判定
+    if @user
+      session[:user_id] = @user.id
+      flash[:notice] = "ログインしました"
+      redirect_to user_path(@user)
+    else
+      @error_message = "メールアドレスまたはパスワードが間違っています"
+
+      # @emailと@passwordを定義してください
+      @email = params[:email]
+      @password = params[:password]
+
+      render :login_form
+    end
+  end
+
+  def logout
+    session[:user_id] = nil
+    flash[:notice] = "ログアウトしました"
+    redirect_to login_path
+  end
+
   private
 
   def user_params
-    params.require(:user).permit(:email, :name, :profile, :image)
+    params.require(:user).permit(:email, :password, :name, :profile, :image)
   end
 
   def set_user
     @user = User.find(params[:id])
+  end
+
+  # 正しいユーザーかを確かめるという意味のensure_correct_userメソッドを定義
+  def ensure_correct_user
+    # ログイン中のユーザーのidと編集したいユーザーのidが等しいか判定
+    if @current_user.id != params[:id].to_i
+      flash[:notice] = "権限がありません"
+      redirect_to root_path
+    end
   end
 end
