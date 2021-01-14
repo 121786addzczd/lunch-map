@@ -10,6 +10,15 @@
   </head>
 
   <body>
+    <p><%= link_to "トップページへ", root_path %></p>
+
+
+    <% if @current_user %>
+      <li>
+        <%= link_to @current_user.name, user_path(@current_user) %>
+      </li>
+      <%= link_to("ログアウト", "/logout", {method: :post}) %>
+    <% end %>
     <%= yield %>
   </body>
 </html>
