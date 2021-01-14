@@ -15,5 +15,15 @@
   <%= @shop.address %>
 </p>
 
+<%= content_tag(:iframe,
+    'map',
+    src:'https://www.google.com/maps/embed/v1/place?key=AIzaSyCJBgcuCowQa5-V8owXaUCHhUNBN8bfMfU&q=' + @shop.address,
+    width: 800,
+    height: 400,
+    frameborder: 0) %>
+
+<br>
+
+
 <%= link_to 'Edit', edit_shop_path(@shop) %> |
 <%= link_to 'Back', shops_path %>
