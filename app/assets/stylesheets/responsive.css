@@ -1,0 +1,46 @@
+/* タブレット向けレイアウト */
+@media all and (max-width: 1000px) {
+  footer {
+    text-align: center;
+  }
+
+  .welcome-top h1 {
+    font-size: 32px;
+  }
+
+  .heading h2 {
+    font-size: 20px;
+  }
+}
+
+/* スマホ向けレイアウト */
+@media all and (max-width: 670px) {
+
+  .btn {
+    width: 100%;
+  }
+
+  .users-index-btn {
+    margin-bottom: 10px;
+  }
+
+  .welcome-top {
+    text-align: left;
+  }
+
+  .header-right{
+    display:none;
+  }
+
+  .fa.menu-icon{
+    display:block !important;
+  }
+
+  .welcome-top h1 {
+    font-size: 24px;
+  }
+
+  .welcome-top p {
+    font-size: 14px;
+  }
+}

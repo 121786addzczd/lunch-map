@@ -1,6 +1,19 @@
-<h1>Lunch Map</h1>
-<p>Tasty meal on your place!!</p>
-<p><%= link_to 'Show shops', shops_path %></p>
-<%= link_to "ユーザー一覧", users_path %>
-<%= link_to "ログイン", login_path %>
-<%= link_to "新規ユーザー登録", signup_path, class:"new-button"%>
+<div class="welcome-top">
+  <div class="container">
+    <h1>LEARN TO CODE.</h1>
+    <h1>Tasty meal on your place!!</h1>
+    <p>ここは、とある未経験者のコード練習場です。</p>
+    <p>実際にアウトプットしながらプログラミングを学んでいます。</p>
+    <div class="btn-welcome-top">
+      <%= link_to '新規登録はこちら', signup_path,class:"btn signup" %>
+      <p>or</p>
+      <%= link_to 'ユーザー一覧', users_path,class:"btn users-index-btn" %>
+      <%= link_to 'お店一覧', shops_path,class:"btn shops-index-btn" %>
+    </div>
+  </div>
+</div>
+<footer>
+  <div class="container">
+    <p class="copyright">Copyright © 2021 All rights reserved.</p>
+  </div>
+</footer>

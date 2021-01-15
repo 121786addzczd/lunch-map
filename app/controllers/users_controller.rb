@@ -37,6 +37,7 @@ class UsersController < ApplicationController
 
   def destroy
     @user.destroy
+    flash[:notice] = '退会の手続きが完了しました'
     redirect_to root_path
   end
 

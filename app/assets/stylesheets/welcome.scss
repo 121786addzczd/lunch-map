@@ -13,3 +13,123 @@
   border-radius: 0 0 2px 2px;
   font-size: 14px;
 }
+
+header {
+  height: 65px;
+  width: 100%;
+  background-color: rgba(34, 49, 52, 0.9);
+  z-index: 10;
+}
+
+.header-logo{
+  width: 124px;
+  color: white;
+  font-size: 2em;
+  font-weight: bold;
+  line-height: 65px;
+  padding: 0 25px;
+}
+
+.header-left {
+  float: left;
+}
+
+.header-right {
+  float: right;
+
+}
+
+.header-right a {
+  line-height: 65px;
+  padding: 0 25px;
+  color: white;
+  display: block;
+  float: left;
+  transition: all 0.5s;
+}
+
+.header-right a:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.menu-icon {
+  color: white;
+  float: right;
+  font-size: 25px;
+  padding: 21px 25px;
+  display: none !important;
+  margin-left: 10px;
+}
+
+
+.welcome-top {
+  padding: 180px 0 100px 0;
+  text-align: center;
+  color: white;
+  background-repeat: no-repeat;
+  background-size: cover;
+    /* 表示画像の高さ ÷ 表示画像の幅 × 100 */
+  background-image: image-url("/images/top.jpg");
+  text-align: center;
+}
+
+.welcome-top h1 {
+  opacity: 0.7;
+  font-size: 45px;
+  letter-spacing: 5px;
+}
+
+.welcome-top p {
+  opacity: 0.7;
+}
+
+.btn-welcome-top {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.btn-welcome-top p {
+  margin: 10px 0;
+}
+
+.signup {
+  background-color: #239b76;
+}
+
+.users-index-btn {
+  background-color: #3b5998;
+  margin-right: 10px;
+}
+
+.shops-index-btn {
+  background-color: #55acee;
+}
+
+.btn {
+  padding: 8px 24px;
+  color: white;
+  display: inline-block;
+  opacity: 0.8;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.btn:hover {
+  opacity: 1;
+}
+
+.fa {
+  margin-right: 5px;
+}
+
+
+footer p {
+  color: #b3aeb5;
+  font-size: 12px;
+  text-align: center;
+}
+
+footer {
+  padding: 5px 0;
+  background-color: #515151;
+}
