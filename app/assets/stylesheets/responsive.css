@@ -32,7 +32,7 @@
     display:none;
   }
 
-  .fa.menu-icon{
+  #js-btn-menu{
     display:block !important;
   }
 
