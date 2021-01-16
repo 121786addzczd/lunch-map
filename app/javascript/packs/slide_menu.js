@@ -1,3 +1,4 @@
+// 画面が生成されるより先にJavaScriptが走るので、このイベントが必須
 document.addEventListener("DOMContentLoaded", function () {
 
   const btn = document.getElementById('js-btn-menu');

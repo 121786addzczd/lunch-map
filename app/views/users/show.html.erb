@@ -26,5 +26,11 @@
         <tr>
       </tbody>
     </table>
+    <div class="item-menu">
+      <% if @user.id == @current_user.id %>
+        <%= link_to "削除", user_path(@user), method: :delete, id:"delete-event" %>
+        <%= link_to "編集", edit_user_path(@user.id)%>
+      <% end %>
+    </div>
   </div>
 </div>
