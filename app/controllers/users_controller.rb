@@ -16,9 +16,13 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    @user.save
-    session[:user_id] = @user.id
-    redirect_to user_path(@user)
+      if @user.save
+        session[:user_id] = @user.id
+        flash[:notice] = "ようこそ！#{@user.name}さん"
+        redirect_to user_path(@user)
+      else
+        render :new
+      end
   end
 
   def show
@@ -56,7 +60,7 @@ class UsersController < ApplicationController
     else
       @error_message = "メールアドレスまたはパスワードが間違っています"
 
-      # @emailと@passwordを定義してください
+      # @emailと@passwordを定義
       @email = params[:email]
       @password = params[:password]
 
@@ -73,7 +77,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:email, :password, :name, :profile, :image)
+    params.require(:user).permit(:email, :password, :password_confirmation, :name, :profile, :image)
   end
 
   def set_user
