@@ -9,27 +9,31 @@
 user = User.create(name: "Aya",
   profile: "都内OLです。",
   email: "aya@aya.com",
-  password: "aaaaaa")
+  password: "aaaaaa",
+  password_confirmation: "aaaaaa")
 user.image.attach(io: File.open(Rails.root.join('public/images/cat.jpg')),
   filename: 'cat.jpg')
 
 user = User.create(name: "Akira",
   profile: "趣味で筋トレしています！",
   email: "akira@akira.com",
-  password: "aaaaaa")
+  password: "aaaaaa",
+  password_confirmation: "aaaaaa")
 user.image.attach(io: File.open(Rails.root.join('public/images/kintore.jpg')),
   filename: 'kintore.jpg')
 
 user = User.create(name: "健太",
   profile: "大学4年",
   email: "kenta@kenta.com",
-  password: "aaaaaa")
+  password: "aaaaaa",
+  password_confirmation: "aaaaaa")
 user.image.attach(io: File.open(Rails.root.join('public/images/dog.jpg')),
   filename: 'dog.jpg')
 
 user = User.create(name: "NEXT",
   profile: "次にむけて",
   email: "next@next.com",
-  password: "aaaaaa")
+  password: "aaaaaa",
+  password_confirmation: "aaaaaa")
 user.image.attach(io: File.open(Rails.root.join('public/images/food.jpeg')),
   filename: 'food.jpeg')
