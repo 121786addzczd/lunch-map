@@ -11,22 +11,7 @@
   </head>
 
   <body>
-    <header>
-      <div class="header-left">
-        <%= link_to "lunch-map", root_path, class:"header-logo" %>
-      </div>
-      <span class="fa fa-bars menu-icon"></span>
-      <div class="header-right">
-        <% if @current_user %>
-          <%= link_to "お店一覧", shops_path %>
-          <%= link_to @current_user.name, user_path(@current_user) %>
-          <%= link_to "ログアウト", logout_path, method: :post %>
-        <% else %>
-          <%= link_to "ログイン", login_path %>
-          <%= link_to "新規登録", signup_path %>
-        <% end %>
-      </div>
-    </header>
+    <%= render "shared/header" %>
     <% if flash[:notice] %>
       <div class="flash">
         <%= flash[:notice] %>

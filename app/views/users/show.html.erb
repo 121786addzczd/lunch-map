@@ -1,29 +1,30 @@
 <div class="container">
-  <div class="container-header">
-    <h1>ユーザー詳細</h1>
-    <%= link_to "戻る", users_path, class:"new-button"%>
-  </div>
-  <div class="index-table-wrapper">
-    <div class="table-head">
-      <span class="id-column">ユーザid</span>
-      <span>ユーザーname</span>
-    </div>
-      <div class="table-body">
-        <div class="item-data">
-          <span class="id-column"><%= @user.id %></span>
-          <% unless @user.image.attached? %>
-            <div class="profile-default-img"></div>
-          <% else %>
-            <%= image_tag @user.image, class: "profile-img" %>
-          <% end %>
-          <span class="name-column"><%= link_to @user.name, user_path(@user.id) %></span>
-        </div>
-        <div class="item-menu">
-          <% if @user.id == @current_user.id %>
-            <%= link_to "削除", user_path(@user), method: :delete, id:"delete-event", data: { confirm: '本当に削除しますか？' } %>
-            <%= link_to "編集", edit_user_path(@user.id)%>
-          <% end %>
-        </div>
-      </div>
+  <div class="shop-box">
+    <table class="detail-table">
+      <tbody>
+        <tr>
+          <th class="detail-shop">ユーザー名</th>
+          <td class="detail-value"><%= @user.name %></td>
+        </tr>
+        <tr>
+          <th class="detail-shop">Email</th>
+          <td class="detail-value"><%= @user.email %></td>
+        </tr>
+        <tr>
+          <th class="detail-shop">プロフィール</th>
+          <td class="detail-value"><%= @user.profile %></td>
+        </tr>
+        <tr>
+        <tr>
+          <th class="detail-shop">プロフィール画像</th>
+          <td class="detail-value">
+            <div class="show-image">
+              <%= image_tag @user.image, class:"user-show-img" %>
+            </div>
+          </td>
+        </tr>
+        <tr>
+      </tbody>
+    </table>
   </div>
 </div>
