@@ -18,6 +18,7 @@
       <span class="fa fa-bars menu-icon"></span>
       <div class="header-right">
         <% if @current_user %>
+          <%= link_to "お店一覧", shops_path %>
           <%= link_to @current_user.name, user_path(@current_user) %>
           <%= link_to "ログアウト", logout_path, method: :post %>
         <% else %>
