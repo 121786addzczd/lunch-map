@@ -5,9 +5,9 @@ class ShopsController < ApplicationController
   # GET /shops.json
   def index
     if params[:name_key]
-      @shops = Shop.where('name LIKE ?', "%#{params[:name_key]}%")
+      @shops = Shop.where('name LIKE ?', "%#{params[:name_key]}%").includes(:category)
     else
-      @shops = Shop.all
+      @shops = Shop.includes(:category)
     end
   end
 
