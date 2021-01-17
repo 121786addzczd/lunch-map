@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   has_one_attached :image
   has_secure_password
+  has_many :lists, dependent: :destroy
 
   validates :name, {presence: true}
   validates :email, {presence: true, uniqueness: true}
