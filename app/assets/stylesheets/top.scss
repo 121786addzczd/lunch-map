@@ -39,6 +39,11 @@
         overflow-y: scroll;
         max-height: 76vh;
 
+        .cardDetail_link {
+          text-decoration: none;
+          color: #323232;
+        }
+
         .card {
           background-color: white;
           margin-bottom: 10px;
