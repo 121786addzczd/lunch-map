@@ -1,0 +1,13 @@
+// Place all the styles related to the card controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.cardnewPgae {
+  .cardnewForm {
+    max-width: 500px;
+    margin: 70px auto 0;
+    &_title {
+      margin-bottom: 30px;
+    }
+  }
+}
