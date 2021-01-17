@@ -10,6 +10,16 @@
             <th class="detail-shop">お店の名前</th>
             <td class="detail-value"><%= @shop.name %></td>
           </tr>
+          <% if @shop.image.attached? %>
+            <tr>
+              <th class="detail-shop">お店の写真</th>
+              <td class="detail-value">
+                <div class="show-image">
+                  <%= image_tag @shop.image, class:"show-images" %>
+                </div>
+              </td>
+            </tr>
+          <% end %>
           <tr>
             <th class="detail-shop">Google Map</th>
             <td class="detail-value">
