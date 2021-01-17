@@ -11,5 +11,5 @@ Rails.application.routes.draw do
   root 'top#index'
 
   get 'top/index'
-  resources :list, only: [:new, :create]
+  resources :list, only: [:new, :create, :edit, :update, :destroy]
 end
