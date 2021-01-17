@@ -53,9 +53,16 @@
 }
 
 .show-images{
+  overflow: hidden;
   width: 100%;
   height: 50%;
+  display: block;
+  transition-duration: 0.5s;
 }
+// .show-images:hover{
+//   transform: scale(1.1);	/*画像の拡大率*/
+// 	transition-duration: 0.5s;	/*変化に掛かる時間*/
+// }
 
 .shop-red-btn {
   text-align: center;
@@ -87,7 +94,10 @@
   width: 100%;
 }
 
-
+// #map:hover{
+//   transform: scale(1.1);	/*画像の拡大率*/
+// 	transition-duration: 0.5s;	/*変化に掛かる時間*/
+// }
 
 
 
