@@ -5,9 +5,11 @@
   <%# スマホサイズのヘッダー 下記表記%>
     <p id="js-btn-menu">メニュー</p>
       <nav>
-        <p><%= link_to "トップページ", root_path %></p>
+        <p><%= link_to "トップページ", top_index_path %></p>
+        <p><%= link_to "ホーム", welcome_index_path %></p>
         <p><%= link_to "お店一覧", shops_path %></p>
         <p><%= link_to "ユーザー一覧", users_path %></p>
+        <p><%= link_to "ToDoリスト作成", new_list_path %></p>
         <p><%= link_to "お問い合わせ", "#" %></p>
         <p><%= link_to "このアプリについて", page_path('about') %></p>
         <p><%= link_to "プライバシー・ポリシー", page_path('praivacy') %></p>
