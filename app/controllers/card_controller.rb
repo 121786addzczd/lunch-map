@@ -19,6 +19,8 @@ class CardController < ApplicationController
   end
 
   def edit
+    # Listモデルからuser_idが@curretn_user.idと一致するレコードの情報を取得する
+    @lists = List.where(user: @current_user)
   end
 
   def destroy
