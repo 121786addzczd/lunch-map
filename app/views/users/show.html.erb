@@ -19,7 +19,11 @@
           <th class="detail-shop">プロフィール画像</th>
           <td class="detail-value">
             <div class="show-image">
-              <%= image_tag @user.image, class:"user-show-img" %>
+              <% if @user.image.attached? %>
+                <%= image_tag @user.image, class:"user-show-img" %>
+              <% else %>
+                <%= image_tag "/images/profile_default_img_128.png", class:"show-images"%>
+              <% end %>
             </div>
           </td>
         </tr>

@@ -6,7 +6,9 @@ class Shop < ApplicationRecord
   # addressを登録された後にlatitude(緯度),longitude(経度)が登録される
   after_validation :geocode, if: :address_changed?
 
-  validates :name, presence: true
-  validates :address, presence: true
-  validates :image, presence: true
+  with_options presence: true do
+    validates :name,length: { maximum: 20 }
+    validates :address,length: { maximum: 50 }
+    validates :image
+  end
 end
