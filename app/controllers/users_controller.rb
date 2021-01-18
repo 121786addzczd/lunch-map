@@ -16,13 +16,35 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-      if @user.save
-        session[:user_id] = @user.id
-        flash[:notice] = "ようこそ！#{@user.name}さん"
-        redirect_to user_path(@user)
-      else
-        render :new
+      unless @user.valid?
+        # falseになった場合は、newアクションへrender
+        render :new and return
       end
+      # sessionにハッシュオブジェクトの形で情報を保持させるために、attributesメソッドを用いてデータを整形
+    session["regist_data"] = {user: @user.attributes}
+    # attributesメソッドでデータ整形をした際にパスワードの情報は含まれていいないので、パスワードを再度sessionに代入する。
+    session["regist_data"][:user]["password"] = params[:user][:password]
+    # ユーザーモデルに紐づく住所情報を入力させるため、該当するインスタンスを生成
+    @address = @user.build_address
+    # 住所情報を登録させるページを表示するnew_addressアクションのビューへrender住所情報を登録させるページを表示するnew_addressアクションのビューへrender
+    render :new_address
+
+  end
+
+  def create_address
+    @user = User.new(session["regist_data"]["user"])
+    @address = Address.new(address_params)
+      unless @address.valid?
+        # 設定したバリデーションの条件を満たさない場合は、renderメソッドによってnew_addressアクションに画面遷移
+        render :new_address and return #ユーザーの情報は保存されてしまうため、防ぐためにand return
+      end
+    @user.build_address(@address.attributes)
+    @user.save
+    session[:user_id] = @user.id #ログインに必要なsessionを作成
+    session["regist_data"]["user"].clear #登録に必要なsessionを削除する
+
+    flash[:notice] = "ようこそ！#{@user.name}さん"
+      redirect_to user_path(@user)
   end
 
   def show
@@ -78,6 +100,10 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:email, :password, :password_confirmation, :name, :profile, :image)
+  end
+
+  def address_params
+    params.require(:address).permit(:postal_code, :address)
   end
 
   def set_user

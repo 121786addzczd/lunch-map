@@ -5,6 +5,8 @@ ja:
        name: 名前
        profile: プロフィール
        image: 画像
+       password: パスワード
+       password_confirmation: パスワード確認
      shop:
        name: お店の名前
        image: 画像
@@ -14,3 +16,6 @@ ja:
      card:
        title: タイトル
        memo: メモ
+     address:
+       address: 住所
+       postal_code: 郵便番号
