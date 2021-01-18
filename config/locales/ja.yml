@@ -1,0 +1,16 @@
+ja:
+ activerecord:
+   attributes:
+     user:
+       name: 名前
+       profile: プロフィール
+       image: 画像
+     shop:
+       name: お店の名前
+       image: 画像
+       address: 住所
+     list:
+       title: タイトル
+     card:
+       title: タイトル
+       memo: メモ

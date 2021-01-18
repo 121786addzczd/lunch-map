@@ -17,6 +17,10 @@
   <%# スマホサイズのヘッダー 上記表記%>
   <div class="header-right">
     <% if @current_user %>
+      <%= link_to new_list_path, class: "nav-link" do %>
+        <span>やることリストを作成</span>
+        <i class="fas fa-edit"></i>
+      <% end %>
       <%= link_to "お店一覧", shops_path %>
       <%= link_to @current_user.name, user_path(@current_user) %>
       <%= link_to "ログアウト", logout_path, method: :post %>

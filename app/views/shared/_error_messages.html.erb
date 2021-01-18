@@ -1,0 +1,11 @@
+<% if model.errors.any? %>
+  <div class="error-count"><%= pluralize(model.errors.count, "件") %> のエラーのため、保存ができませんでした</div>
+
+<div class="error-alert">
+  <ul>
+    <% model.errors.full_messages.each do |message| %>
+    <li class='error-message'><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>

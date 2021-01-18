@@ -2,9 +2,7 @@
   <div class='container'>
     <%= form_with model: @card, url: { action: :create }, html: { class: 'cardnewForm' }, local: true do |f| %>
       <%= f.hidden_field :list_id, value: @list.id %>
-      <% if @card.errors.any? %>
-        <p class="text-danger">タイトルは1～255文字以内で入力してください</p>
-      <% end %>
+      <%= render 'shared/error_messages', model: f.object %>
       <div class="cardnewForm_title">
         <%= f.label :title %>
         <%= f.text_field :title, autofocus: true, class: "form-control", placeholder: "カード名" %>
@@ -14,6 +12,7 @@
         <%= f.text_area :memo, autofocus: true, class: "form-control", placeholder: "詳細" %>
       <div class="text-center"><%= f.submit "作成する", class: "submitBtn" %></div>
       </div>
+      <%= link_to "戻る", top_index_path, class:"cancel-button" %>
     <% end %>
   </div>
 </div>
