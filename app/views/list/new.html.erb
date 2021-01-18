@@ -6,7 +6,10 @@
       <% end %>
       <%= f.label :title %>
       <%= f.text_field :title, autofocus: true, class: "form-control listName", placeholder: "リスト名" %>
-      <div class="text-center"><%= f.submit "作成", class: "submitBtn" %></div>
+      <div class="text-center">
+        <%= f.submit "作成", class: "submitBtn" %>
+      </div>
+        <%= link_to "戻る", top_index_path, class:"cancel-button" %>
     <% end %>
   </div>
 </div>

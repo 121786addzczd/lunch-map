@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :categories
   get 'welcome/index'
 
-  root 'top#index'
+  root 'welcome#index'
 
   get 'top/index'
   resources :list, only: [:new, :create, :edit, :update, :destroy] do

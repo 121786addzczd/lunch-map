@@ -8,3 +8,34 @@
     margin: 100px auto 0;
   }
 }
+
+.listnewPage {
+  .new_list {
+    max-width: 500px;
+    margin: 100px auto 0;
+
+  }
+}
+
+.text-center{
+  text-align: center;
+  font-weight: bold;
+}
+
+.submitBtn{
+  background-color: rgb(62, 156, 54);
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+  border-radius: 4px;
+  border: 1px solid;
+  padding:5px 20px;
+  width: 60%;
+  color: rgb(241, 239, 239);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.form-control{
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 10px;
+}

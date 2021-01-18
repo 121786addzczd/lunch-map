@@ -2,6 +2,7 @@
   <div class="container">
     <h2 class="form-heading">新規ユーザー登録</h2>
       <%= form_with model: @user, class: 'registration-main', local: true do |f| %>
+        <%= render 'shared/error_messages', model: f.object %>
         <div class='form-wrap'>
           <div class="form-group">
             <div class='form-text-wrap'>

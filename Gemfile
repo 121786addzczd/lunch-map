@@ -58,3 +58,4 @@ gem 'image_processing', '~> 1.2'
 gem 'bcrypt'
 gem "geocoder"
 gem 'high_voltage'
+gem 'rails-i18n'
