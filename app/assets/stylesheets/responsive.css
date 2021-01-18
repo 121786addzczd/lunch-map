@@ -12,6 +12,16 @@
     font-size: 20px;
   }
 }
+/* タブレット */
+@media all and (max-width: 860px) {
+  #js-btn-menu{
+    display:block !important;
+  }
+  .header-right{
+    display:none;
+  }
+
+}
 
 /* スマホ向けレイアウト */
 @media all and (max-width: 670px) {
