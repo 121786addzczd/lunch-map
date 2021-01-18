@@ -1,0 +1,20 @@
+
+
+<div class="cardnewPgae">
+  <div class='container'>
+    <h2>住所情報登録</h2>
+    <%= form_with model: @address, local: true do |f| %>
+      <%= render 'shared/error_messages', model: f.object %>
+      <div class="cardnewForm_title">
+        <%= f.label :郵便番号 %>
+        <%= f.text_field :postal_code, autofocus: true, class: "form-control", placeholder: "例)123-5678" %>
+      </div>
+      <div class="cardnewForm_memo">
+        <%= f.label :住所 %>
+        <%= f.text_field :address, autofocus: true, class: "form-control", placeholder: "例)東京都渋谷区" %>
+      <div class="text-center">
+        <%= f.submit "新規登録", class: "submitBtn" %></div>
+      </div>
+    <% end %>
+  </div>
+</div>
