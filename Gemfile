@@ -60,3 +60,4 @@ gem "geocoder"
 gem 'high_voltage'
 gem 'rails-i18n'
 gem 'pry-rails'
+gem 'chartkick'
